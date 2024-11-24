@@ -31,7 +31,7 @@ workflows:
       steps:
         - run: |
             echo "Running Terraform Init"
-            terraform init
+            terraform init -out=tfinit
         - run: |
             echo "Running Terraform Plan"
             terraform plan -out=tfplan
