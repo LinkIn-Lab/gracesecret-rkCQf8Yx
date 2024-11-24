@@ -30,11 +30,8 @@ workflows:
     plan:
       steps:
         - run: |
-            echo "Running Terraform Init"
-            terraform init -out=tfinit
-        - run: |
             echo "Running Terraform Plan"
-            terraform plan -out=tfplan
+            terraform init && terraform plan -out=tfplan
 
         - run: |
             echo "Converting Terraform Plan to JSON"
